@@ -1,0 +1,9 @@
+[user]
+	name = bharathpbhat
+	email = bharathpbhat@gmail.com
+[core]
+	excludesfile = /Users/bharathbhat/.gitignore_global
+	editor = mvim -v
+	pager = diff-highlight | diff-so-fancy | less --tabs=1,5 -R
+[push]
+	default = current
