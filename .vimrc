@@ -16,6 +16,9 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'kurko/smartest.vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'derekwyatt/vim-scala'
+Plugin 'nvie/vim-flake8'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-syntastic/syntastic'
 
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -51,3 +54,14 @@ let g:ruby_debugger_progname='mvim'
 au FileType javascript call JavaScriptFold()
 :command! -nargs=* -complete=shellcmd XX enew | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args>
 au Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+autocmd BufWritePre *.py %s/\s\+$//e
