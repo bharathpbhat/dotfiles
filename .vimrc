@@ -3,6 +3,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'github/copilot.vim'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'tpope/vim-rails.git'
 Plugin 'vim-ruby/vim-ruby'
@@ -33,7 +34,7 @@ set bs=2
 set number
 set hidden
 
-colorscheme peachpuff
+colorscheme torte
 syntax on
 
 filetype plugin indent on
@@ -65,3 +66,4 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 autocmd BufWritePre *.py %s/\s\+$//e
+au BufRead,BufNewFile *.md setlocal textwidth=80
